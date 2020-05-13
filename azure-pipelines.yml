@@ -1,0 +1,11 @@
+jobs:
+- job: VS2019
+  pool:
+    vmImage: 'windows-2019'
+  steps:
+  - script: |
+      call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Auxiliary\Build\vcvars64.bat"
+      mkdir build64
+      cd build64
+      cmake .. -G "Visual Studio 16 2019" -A x64
+      MSBuild.exe ..\build64\MyProject.sln

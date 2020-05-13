@@ -9,3 +9,8 @@ jobs:
       cd build64
       cmake .. -G "Visual Studio 16 2019" -A x64
       MSBuild.exe ..\build64\MyProject.sln
+      cd ..
+      mkdir buildNinja
+      cd buildNinja
+      cmake .. -G "Ninja"
+      ninja.exe -v

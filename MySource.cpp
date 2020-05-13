@@ -22,7 +22,9 @@
 // https://developercommunity.visualstudio.com/content/problem/1027499/visual-studio-integrated-cmake-should-define-windl.html
 
 
-#ifndef _WINDLL
+#ifdef _WINDLL
+#pragma message("_WINDLL is defined. That's great! :-)")
+#else
 #error "_WINDLL should be defined! (It is defined automatically when using cmake-gui)"
 #endif
 
